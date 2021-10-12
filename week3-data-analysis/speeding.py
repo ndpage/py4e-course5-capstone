@@ -7,6 +7,7 @@ Created: September 24, 2021
 import pandas as pd
 from pandas.core.frame import DataFrame
 import matplotlib.pyplot as plt
+import numpy as np
 
 def main():
     # Read data from csv file 
@@ -53,24 +54,20 @@ def main():
 
     # Create plots and set up window 
 
-    # Plot 1 
-    plt.hist(pre_sign, label="Before sign")
-    plt.subplot(131,label="Pre-Sign")
-    plt.ylabel("Number of drivers")
-    plt.xlabel("Speed (mph)")
-    plt.title("Before Sign")
+    plt.rcParams["figure.figsize"] = [7.50, 3.50]
+    plt.rcParams["figure.autolayout"] = True
 
-    # plot 2 
-    plt.hist(shortly_after)
-    plt.subplot(132, label="After sign")
-    plt.xlabel("Speed (mph)")
-    plt.title("Shortly After Sign")
+    fig, axes = plt.subplots(3, 2)
 
-    # Plot 3
-    plt.hist(long_time_after)
-    #plt.subplot(133, label="Long time after sign")
-    plt.xlabel("Speed (mph)")
-    plt.title("A Long Time After Sign")
+    """ Iterate column's axes"""
+    def iterate_columns(cols, x):
+        for col in cols:
+            col.plot(x, color='red')
+
+    """ Iterate row's axes"""
+    for row in axes:
+        x = np.random.normal(0, 1, 100).cumsum()
+        iterate_columns(row, x)
 
     plt.show()
 
