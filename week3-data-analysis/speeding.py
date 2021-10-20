@@ -55,13 +55,15 @@ def main():
     '''.format(avg1,avg2,avg3))
 
     # Set up fig and axes
-    fig, ax = plt.subplots() 
+    fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1) 
 
-    ax.hist(pre_sign, color='blue', label='Before sign')
-    ax.hist(shortly_after, color='green', label='After sign')
-    ax.hist(long_time_after, color='red', label='Long time after sign')
+    ax1.hist(pre_sign, color='blue', label='Before sign')
+    ax2.hist(shortly_after, color='green', label='After sign')
+    ax3.hist(long_time_after, color='red', label='Long time after sign')
 
-    ax.legend()
+    ax1.legend()
+    ax2.legend()
+    ax3.legend()
 
     plt.show()
 
