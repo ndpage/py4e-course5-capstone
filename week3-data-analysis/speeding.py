@@ -56,14 +56,14 @@ def main():
 
     # Create plots for each time period
 
-    plt.hist(pre_sign,color='blue', bins=20, label='Before sign')
-    plt.hist(shortly_after,color='green', bins=20, label='After sign')
-    plt.hist(long_time_after,color='red', bins=20, label='Long time after')
+    # plt.hist(pre_sign,color='blue', bins=20, label='Before sign')
+    # plt.hist(shortly_after,color='green', bins=20, label='After sign')
+    # plt.hist(long_time_after,color='red', bins=20, label='Long time after')
     
-    # Set axes parameters
-    plt.xlabel('Speed range')
-    plt.ylabel('Speed')
-    plt.legend()
+    # # Set axes parameters
+    # plt.xlabel('Speed range')
+    # plt.ylabel('Speed')
+    # plt.legend()
 
     plt.show()
 
