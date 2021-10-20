@@ -72,13 +72,18 @@ def main():
     ax2.hist(shortly_after, color='green', label='After sign')
     ax3.hist(long_time_after, color='red', label='Long time after sign')
 
-    ax1.set_xlabel(f'Avg Speed {avg1}')
-    ax2.set_xlabel(f'Avg Speed {avg2}')
-    ax3.set_xlabel(f'Avg Speed {avg3}')
-
+    # Set axis parameters
+    ax1.set_xlabel(f'Avg Speed {avg1} mph')
+    ax2.set_xlabel(f'Avg Speed {avg2} mph')
+    ax3.set_xlabel(f'Avg Speed {avg3} mph')
+    
+    # Show legen on each subplot
     ax1.legend()
     ax2.legend()
     ax3.legend()
+    
+    # Set figure layout
+    plt.tight_layout() # auto formats padding with the figure
 
     plt.show()
 
