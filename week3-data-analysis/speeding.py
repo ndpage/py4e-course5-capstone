@@ -64,6 +64,16 @@ def main():
     # plt.xlabel('Speed range')
     # plt.ylabel('Speed')
     # plt.legend()
+    # Set up fig and axes
+    fig, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1) 
+
+    ax1.hist(pre_sign, color='blue', label='Before sign')
+    ax2.hist(shortly_after, color='green', label='After sign')
+    ax3.hist(long_time_after, color='red', label='Long time after sign')
+
+    ax1.legend()
+    ax2.legend()
+    ax3.legend()
 
     plt.show()
 
