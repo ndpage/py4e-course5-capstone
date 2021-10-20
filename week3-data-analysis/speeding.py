@@ -40,6 +40,8 @@ def main():
         else:
             continue
 
+    data_2D_arr = [pre_sign,shortly_after,long_time_after]
+    print(len(data_2D_arr))
 
     # calculate average/mean speed of each period
     avg1 = sum(pre_sign)/len(pre_sign)
@@ -55,19 +57,17 @@ def main():
     # Create plots and set up window 
 
     plt.rcParams["figure.figsize"] = [7.50, 3.50]
-    plt.rcParams["figure.autolayout"] = True
 
-    fig, axes = plt.subplots(3, 2)
+    fig, axes = plt.subplots(nrows=2, ncols=2)
 
-    """ Iterate column's axes"""
-    def iterate_columns(cols, x):
-        for col in cols:
-            col.plot(x, color='red')
+    """ Iterate row's axes
+    for row, arr in zip(axes,data_2D_arr):
+        for col in row:
+            col.plot(arr)
+    
+     """
 
-    """ Iterate row's axes"""
-    for row in axes:
-        x = np.random.normal(0, 1, 100).cumsum()
-        iterate_columns(row, x)
+        #iterate_columns(row, arr)
 
     plt.show()
 
