@@ -54,20 +54,14 @@ def main():
     Average speed a long time after sign {}
     '''.format(avg1,avg2,avg3))
 
-    # Create plots and set up window 
+    # Set up fig and axes
+    fig, ax = plt.subplots() 
 
-    plt.rcParams["figure.figsize"] = [7.50, 3.50]
+    ax.hist(pre_sign, color='blue', label='Before sign')
+    ax.hist(shortly_after, color='green', label='After sign')
+    ax.hist(long_time_after, color='red', label='Long time after sign')
 
-    fig, axes = plt.subplots(nrows=2, ncols=2)
-
-    """ Iterate row's axes
-    for row, arr in zip(axes,data_2D_arr):
-        for col in row:
-            col.plot(arr)
-    
-     """
-
-        #iterate_columns(row, arr)
+    ax.legend()
 
     plt.show()
 
