@@ -40,7 +40,9 @@ for (message_id, message) in list(messages.items()):
     if len(pieces) != 2 : continue
     dns = pieces[1]
     if dns not in orgs : continue
-    month = message[3][:7]
+    
+    # To show by contributions by month use message[3][:7]. To show by year, use message[3][:4]
+    month = message[3][:4] # message[3] extracts the data and time of the email
     if month not in months : months.append(month)
     key = (month, dns)
     counts[key] = counts.get(key,0) + 1
@@ -61,7 +63,7 @@ for month in months:
         key = (month, org)
         val = counts.get(key,0)
         fhand.write(","+str(val))
-    fhand.write("]");
+    fhand.write("]")
 
 fhand.write("\n];\n")
 fhand.close()
